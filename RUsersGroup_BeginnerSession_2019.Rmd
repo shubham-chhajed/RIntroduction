@@ -275,7 +275,13 @@ irisdata$Sepal.Length # all values in column with column name 'Sepal.length'
 as.matrix(irisdata)
 ```
 ```{r}
-irisdata[1, 1:7] # first row only of values in columns 1 to 7
+# why won't this run?
+
+# irisdata[1, 1:7] # first row only of values in columns 1 to 7
+
+# fixed
+
+irisdata[1, 1:6]
 ```
 
 ```{r}
