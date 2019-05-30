@@ -161,7 +161,9 @@ seq_b <- seq(from=1,to=25,by=2)
 
 5. Using cbind() you can bind two vectors to create a *matrix* (a kind of table). Use cbind() to bind seq_a and seq_b. Assign it to the object 'c'. For help, call ?cbind
 ```{r}
-c <- cbind(seq_a,seq_b)
+# uncomment this next line and pay attention to what happens when this like is run
+
+# c <- cbind(seq_a,seq_b)
 ```
 
 
