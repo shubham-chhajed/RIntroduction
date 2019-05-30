@@ -52,18 +52,19 @@ Install R and R Studio according to the manual provided in the "R Users Group Be
 
 **But what can it actually do?**
 
+* R as a [calculator](http://mercury.webster.edu/aleshunas/R_learning_infrastructure/Using%20R%20as%20a%20calculator.html)
 * Manipulate data
 * Conduct any statistical test
 * Import software 'packages' with specialised functions (more on this later)
 * Automate analyses
 * Design simple or complicated graphs
-* R as a [calculator](http://mercury.webster.edu/aleshunas/R_learning_infrastructure/Using%20R%20as%20a%20calculator.html)
+
 
 **Why you should use it?**
 
 * It is free and open-source
 * R has been receiving contributions from many programmers around the globe
-* [Listed as 3rd most used languages in Data Science](http://www.kdnuggets.com/2017/01/most-popular-language-machine-learning-data-science.html)
+* [Listed as 3rd most used languages in Data Science](https://businessoverbroadway.com/2019/01/13/programming-languages-most-used-and-recommended-by-data-scientists/)
 * Massive community for online support
 * Very specific problems are mostly addressed with a package
 * It is widely used with many books published in the last years
@@ -154,7 +155,7 @@ c <- cbind(seq_a,seq_b)
 ```
 
 
-6. Ups. Let's see what went wrong. Can you decipher the error message? Have a look at seq_a and seq_b. Just type seq_a and seq_b and execute both. No worries, debugging (resolving errors) is a major part of programming.
+6. Oops! Let's see what went wrong. Can you decipher the error message? Have a look at seq_a and seq_b. Just type seq_a and seq_b and execute both. No worries, debugging (resolving errors) is a major part of programming.
 ```{r}
 seq_a
 seq_b
