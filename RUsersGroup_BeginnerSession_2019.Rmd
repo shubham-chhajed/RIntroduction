@@ -52,18 +52,19 @@ Install R and R Studio according to the manual provided in the "R Users Group Be
 
 **But what can it actually do?**
 
+* R as a [calculator](http://mercury.webster.edu/aleshunas/R_learning_infrastructure/Using%20R%20as%20a%20calculator.html)
 * Manipulate data
 * Conduct any statistical test
 * Import software 'packages' with specialised functions (more on this later)
 * Automate analyses
 * Design simple or complicated graphs
-* R as a [calculator](http://mercury.webster.edu/aleshunas/R_learning_infrastructure/Using%20R%20as%20a%20calculator.html)
+
 
 **Why you should use it?**
 
 * It is free and open-source
 * R has been receiving contributions from many programmers around the globe
-* [Listed as 3rd most used languages in Data Science](http://www.kdnuggets.com/2017/01/most-popular-language-machine-learning-data-science.html)
+* [Listed as 3rd most used languages in Data Science](https://businessoverbroadway.com/2019/01/13/programming-languages-most-used-and-recommended-by-data-scientists/)
 * Massive community for online support
 * Very specific problems are mostly addressed with a package
 * It is widely used with many books published in the last years
@@ -106,6 +107,16 @@ R-studio gives you a more intuitive interface and takes the scariness out of cod
 
 # flat_white <- froth(milk, hot) + extract(coffee)
 # flat_white = froth(milk, hot) + extract(coffee)
+
+# verb(argument)
+# argument can be a "noun" (being acted upon) or an "adverb" (modifying its behavior)
+
+# Example1: boiling milk normally
+# boiled_milk <- boil (milk)
+
+# Example2: boiling milk for a long time
+# boiled_milk <- boil (milk, long_time)
+ 
 ```
 froth() and extract() are *functions*, milk, hot and coffee are *arguments*
 
@@ -122,7 +133,7 @@ Functions need arguments to fulfill the purpose they were designed for. e.g. fro
 
 1. We can assign (<-) a basic calculation to the object 'a' and call the content of 'a'. Execute your code using Ctrl+Enter
 ```{r}
-a <- 1+2 # here R works ike a calculator
+a <- 1+2 # here R works like a calculator
 a        # print a to see what it contains
 ```
 
@@ -150,11 +161,13 @@ seq_b <- seq(from=1,to=25,by=2)
 
 5. Using cbind() you can bind two vectors to create a *matrix* (a kind of table). Use cbind() to bind seq_a and seq_b. Assign it to the object 'c'. For help, call ?cbind
 ```{r}
-c <- cbind(seq_a,seq_b)
+# uncomment this next line and pay attention to what happens when this like is run
+
+# c <- cbind(seq_a,seq_b)
 ```
 
 
-6. Ups. Let's see what went wrong. Can you decipher the error message? Have a look at seq_a and seq_b. Just type seq_a and seq_b and execute both. No worries, debugging (resolving errors) is a major part of programming.
+6. Oops! Let's see what went wrong. Can you decipher the error message? Have a look at seq_a and seq_b. Just type seq_a and seq_b and execute both. No worries, debugging (resolving errors) is a major part of programming.
 ```{r}
 seq_a
 seq_b
@@ -225,7 +238,7 @@ data(PlantGrowth)
 
 # or
 
-irisdata <- read.csv("input/irisdata.csv") 
+irisdata <- read.csv("Input/irisdata.csv") 
 irisdata
 
 # Why using .csv instead of Excel sheets (.xls and .xlsx)?
@@ -256,10 +269,21 @@ irisdata['Species'] # all values in column with column name 'Species'
 irisdata$Sepal.Length # all values in column with column name 'Sepal.length'
 ```
 ```{r}
-as.matrix(irisdata)$Sepal.Length # this won't work. atomic vectors = (logical, integer, double (sometimes called numeric), and character)
+#as.matrix(irisdata)$Sepal.Length 
+
+# this won't work. atomic vectors = (logical, integer, double (sometimes called numeric), and character)
+
+# this will work
+as.matrix(irisdata)
 ```
 ```{r}
-irisdata[1, 1:7] # first row only of values in columns 1 to 7
+# why won't this run?
+
+# irisdata[1, 1:7] # first row only of values in columns 1 to 7
+
+# fixed
+
+irisdata[1, 1:6]
 ```
 
 ```{r}
@@ -280,7 +304,7 @@ write.csv(irisdata, 'New irisdata incl rownames.csv')
 
 1. Read in a new dataset in csv 
 ```{r}
-plant.df <- read.csv("input/PlantGrowth.csv") 
+plant.df <- read.csv("Input/PlantGrowth.csv") 
 ```
 
 2. Clean the data up a bit and specify that the group is a factor variable.
@@ -295,7 +319,15 @@ plant.df$group <- factor(plant.df$group,
 boxplot(weight~group, plant.df)
 ```
 
-And save it as a .pdf file.
+
+4. Create a folder to store the results. 
+
+```{r}
+# this line can be different for Mac users
+dir.create("output")
+```
+
+And save it as a .pdf file in the output folder.
 ```{r}
 pdf('output/My Boxplot.pdf', width = 20, height = 10 , paper = 'a4r')
 boxplot(weight~group, plant.df, ylab='Dried weight of plants [g]')
@@ -322,15 +354,13 @@ In our case, as we ran a linear model, we probably want to visualise our model e
 
 #install.packages('readr') #install
 library(readr) #load
-
-irisdata <- read_csv("input/irisdata.csv") 
-irisdata
 ```
 
 Now all we have to do is use a function within the newly loaded package!
 
 ```{r}
-visreg(plant.mod1)
+irisdata <- read_csv("Input/irisdata.csv") 
+irisdata
 ```
 
 
@@ -361,4 +391,8 @@ visreg(plant.mod1)
 * Your first data analysis
 * How to proceed on your own
 
-        
+# saving current rmd file as html
+
+```{r}
+rmarkdown::render("RUsersGroup_BeginnerSession_2019.Rmd")
+```        
