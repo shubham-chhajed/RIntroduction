@@ -107,6 +107,16 @@ R-studio gives you a more intuitive interface and takes the scariness out of cod
 
 # flat_white <- froth(milk, hot) + extract(coffee)
 # flat_white = froth(milk, hot) + extract(coffee)
+
+# verb(argument)
+# argument can be a "noun" (being acted upon) or an "adverb" (modifying its behavior)
+
+# Example1: boiling milk normally
+# boiled_milk <- boil (milk)
+
+# Example2: boiling milk for a long time
+# boiled_milk <- boil (milk, long_time)
+ 
 ```
 froth() and extract() are *functions*, milk, hot and coffee are *arguments*
 
