@@ -378,4 +378,8 @@ irisdata
 * Your first data analysis
 * How to proceed on your own
 
-        
+# saving current rmd file as html
+
+```{r}
+rmarkdown::render("RIntroduction.Rmd")
+```        
