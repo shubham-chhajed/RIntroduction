@@ -226,7 +226,7 @@ data(PlantGrowth)
 
 # or
 
-irisdata <- read.csv("input/irisdata.csv") 
+irisdata <- read.csv("Input/irisdata.csv") 
 irisdata
 
 # Why using .csv instead of Excel sheets (.xls and .xlsx)?
@@ -281,7 +281,7 @@ write.csv(irisdata, 'New irisdata incl rownames.csv')
 
 1. Read in a new dataset in csv 
 ```{r}
-plant.df <- read.csv("input/PlantGrowth.csv") 
+plant.df <- read.csv("Input/PlantGrowth.csv") 
 ```
 
 2. Clean the data up a bit and specify that the group is a factor variable.
@@ -296,7 +296,15 @@ plant.df$group <- factor(plant.df$group,
 boxplot(weight~group, plant.df)
 ```
 
-And save it as a .pdf file.
+
+4. Create a folder to store the results. 
+
+```{r}
+# this line can be different for Mac users
+dir.create("output")
+```
+
+And save it as a .pdf file in the output folder.
 ```{r}
 pdf('output/My Boxplot.pdf', width = 20, height = 10 , paper = 'a4r')
 boxplot(weight~group, plant.df, ylab='Dried weight of plants [g]')
@@ -323,15 +331,13 @@ In our case, as we ran a linear model, we probably want to visualise our model e
 
 #install.packages('readr') #install
 library(readr) #load
-
-irisdata <- read_csv("input/irisdata.csv") 
-irisdata
 ```
 
 Now all we have to do is use a function within the newly loaded package!
 
 ```{r}
-visreg(plant.mod1)
+irisdata <- read_csv("Input/irisdata.csv") 
+irisdata
 ```
 
 
