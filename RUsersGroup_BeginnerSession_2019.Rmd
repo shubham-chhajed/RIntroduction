@@ -267,7 +267,12 @@ irisdata['Species'] # all values in column with column name 'Species'
 irisdata$Sepal.Length # all values in column with column name 'Sepal.length'
 ```
 ```{r}
-as.matrix(irisdata)$Sepal.Length # this won't work. atomic vectors = (logical, integer, double (sometimes called numeric), and character)
+#as.matrix(irisdata)$Sepal.Length 
+
+# this won't work. atomic vectors = (logical, integer, double (sometimes called numeric), and character)
+
+# this will work
+as.matrix(irisdata)
 ```
 ```{r}
 irisdata[1, 1:7] # first row only of values in columns 1 to 7
