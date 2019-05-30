@@ -133,7 +133,7 @@ Functions need arguments to fulfill the purpose they were designed for. e.g. fro
 
 1. We can assign (<-) a basic calculation to the object 'a' and call the content of 'a'. Execute your code using Ctrl+Enter
 ```{r}
-a <- 1+2 # here R works ike a calculator
+a <- 1+2 # here R works like a calculator
 a        # print a to see what it contains
 ```
 
