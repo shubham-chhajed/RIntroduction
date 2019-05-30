@@ -394,5 +394,5 @@ irisdata
 # saving current rmd file as html
 
 ```{r}
-rmarkdown::render("RIntroduction.Rmd")
+rmarkdown::render("RUsersGroup_BeginnerSession_2019.Rmd")
 ```        
